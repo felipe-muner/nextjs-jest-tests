@@ -15,6 +15,9 @@ const Text = ({ text }) => {
       <button role="button" onClick={add}>
         Increase
       </button>
+      <button role="button" onClick={add}>
+        Increase2
+      </button>
     </div>
   );
 };
