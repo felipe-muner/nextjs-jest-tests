@@ -17,5 +17,5 @@ test('Button Amount', ()=> {
 test('H2 Amount', ()=> {
   const render = shallow(<Index />);
   const h2s = render.find('h2')
-  expect(h2s).toHaveLength(4)
+  expect(h2s).toHaveLength(0)
 });
