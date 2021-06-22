@@ -1,5 +1,5 @@
 import Text from '../components/Text';
-import Index from '../components/Index';
+import Index from '../pages/index';
 import { shallow } from "enzyme";
 
 test('Div Amount', ()=> {
@@ -14,8 +14,8 @@ test('Button Amount', ()=> {
   expect(buttons).toHaveLength(2)
 });
 
-test('H1 Amount', ()=> {
+test('H2 Amount', ()=> {
   const render = shallow(<Index />);
-  const h1s = render.find('h1')
-  expect(h1s).toHaveLength(1)
+  const h2s = render.find('h2')
+  expect(h2s).toHaveLength(4)
 });
