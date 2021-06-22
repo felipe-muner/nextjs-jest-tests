@@ -18,26 +18,28 @@ export default function Home() {
   };
 
   return (
-    <div className={classes.container}>
+    <>
       <div>
-        <h2 className="felipe">My Savings</h2>
+        <h2>My Savings</h2>
       </div>
-      <div>
-        <div className={classes.container}>
-          <div className={classes.checking}>
-            <CheckingAccount
-              checkingAmount={checkingAmount}
-              sentToSaving={sentToSaving}
-            />
-          </div>
-          <div className={classes.saving}>
-            <SavingAccount
-              savingAmount={savingAmount}
-              sentToChecking={sentToChecking}
-            />
+      <div className={classes.container}>
+        <div>
+          <div className={classes.container}>
+            <div className={classes.checking}>
+              <CheckingAccount
+                checkingAmount={checkingAmount}
+                sentToSaving={sentToSaving}
+              />
+            </div>
+            <div className={classes.saving}>
+              <SavingAccount
+                savingAmount={savingAmount}
+                sentToChecking={sentToChecking}
+              />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
