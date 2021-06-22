@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Constants SUPERHEROES should match snapshot 1`] = `
+Array [
+  "Batman",
+  "superman",
+  "deadpool",
+  "wolverine",
+]
+`;
+
+exports[`snapshots should match snapshot 1`] = `
+<Fragment>
+  <div>
+    <h2>
+      My Savings
+    </h2>
+  </div>
+  <button
+    id="test-increment"
+    onClick={[Function]}
+  >
+     
+    increment
+  </button>
+  <div
+    id="counter"
+  >
+    0
+  </div>
+  <div>
+    <div>
+      <div>
+        <div>
+          <CheckingAccount
+            checkingAmount={3850}
+            sentToSaving={[Function]}
+          />
+        </div>
+        <div>
+          <SavingAccount
+            savingAmount={9820}
+            sentToChecking={[Function]}
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</Fragment>
+`;

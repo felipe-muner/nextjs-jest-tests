@@ -6,6 +6,7 @@ import Index from "../pages/index";
 import CheckingAccount from "../components/CheckingAccount";
 import SavingAccount from "../components/SavingAccount";
 import { shallow, mount } from "enzyme";
+import { SUPERHEROES } from "../constants/superheros";
 
 const user = {
   checkingAmount: 300,
@@ -38,9 +39,35 @@ describe("Saving account - passing props", () => {
   it("it accepts user acc props", () => {
     expect(savingAccount.props().savingAmount).toBe(user.checkingAmount);
   });
-  it("it shows same value", () => {
+  it("it shows same text", () => {
     const total = savingAccount.find("#saving").text();
-    const expected = user.checkingAmount + "$"
+    const expected = user.checkingAmount + "$";
     expect(expected).toEqual(total);
   });
+});
+
+describe("Simulating clicks", () => {
+  it("Test click event", () => {
+    const mockCallBack = jest.fn();
+    const button = shallow(<button onClick={mockCallBack}>Ok!</button>);
+    button.find("button").simulate("click");
+    expect(mockCallBack.mock.calls.length).toEqual(1);
+  });
+});
+
+describe("Simulating clicks 2", () => {
+  const index = mount(<Index />);
+  index.find("#test-increment").simulate("click");
+  const counter = index.find("#counter").text();
+  expect(counter).toEqual("1");
+});
+
+describe("snapshots", () => {
+  const tree = shallow(<Index />);
+  it("should match snapshot", () => expect(tree).toMatchSnapshot());
+});
+
+
+describe("Constants", () => {
+  it("SUPERHEROES should match snapshot", () => expect(SUPERHEROES).toMatchSnapshot());
 });

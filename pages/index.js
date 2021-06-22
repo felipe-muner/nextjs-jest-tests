@@ -4,6 +4,7 @@ import SavingAccount from "../components/SavingAccount";
 import { useState } from "react";
 
 export default function Home() {
+  const [counter, setCounter] = useState(0);
   const [checkingAmount, setCheckingAmount] = useState(3850);
   const [savingAmount, setSavingAmount] = useState(9820);
 
@@ -22,6 +23,11 @@ export default function Home() {
       <div>
         <h2>My Savings</h2>
       </div>
+      <button id="test-increment" onClick={() => setCounter(counter + 1)}>
+        {" "}
+        increment
+      </button>
+      <div id="counter">{counter}</div>
       <div className={classes.container}>
         <div>
           <div className={classes.container}>
