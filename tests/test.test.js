@@ -32,3 +32,15 @@ describe("rendering components", () => {
     expect(label).toEqual("Send 100 to Saving");
   });
 });
+
+describe("Saving account - passing props", () => {
+  const savingAccount = mount(<SavingAccount savingAmount={300} />);
+  it("it accepts user acc props", () => {
+    expect(savingAccount.props().savingAmount).toBe(user.checkingAmount);
+  });
+  it("it shows same value", () => {
+    const total = savingAccount.find("#saving").text();
+    const expected = user.checkingAmount + "$"
+    expect(expected).toEqual(total);
+  });
+});
