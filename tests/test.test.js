@@ -63,8 +63,11 @@ describe("Simulating clicks 2", () => {
 });
 
 describe("snapshots Index", () => {
-  const tree = shallow(<Index />);
-  it("should match snapshot", () => expect(tree).toMatchSnapshot());
+  const wrapper = shallow(<Index />);
+  wrapper.find("#test-increment").simulate("click");
+  wrapper.find("#test-increment").simulate("click");
+  wrapper.find("#test-increment").simulate("click");
+  it("should match snapshot", () => expect(wrapper).toMatchSnapshot());
   // expect(tree.prop('style')).toMatchSnapshot();
   // expect(tree.prop('style')).toMatchSnapshot();
 });
@@ -80,6 +83,6 @@ describe("Constants print style", () => {
       style="font-size:10px;"      
     />
   );
-  it("SUPERHEROES should match snapshot", () =>
+  it("checking component css style ", () =>
     expect(wrapper.prop("style")).toMatchSnapshot());
 });

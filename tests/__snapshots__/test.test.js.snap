@@ -9,7 +9,7 @@ Array [
 ]
 `;
 
-exports[`Constants print style SUPERHEROES should match snapshot 1`] = `"font-size:10px;"`;
+exports[`Constants print style checking component css style  1`] = `"font-size:10px;"`;
 
 exports[`snapshots Index should match snapshot 1`] = `
 <Fragment>
@@ -28,7 +28,7 @@ exports[`snapshots Index should match snapshot 1`] = `
   <div
     id="counter"
   >
-    0
+    3
   </div>
   <div>
     <div>
