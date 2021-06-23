@@ -5,8 +5,8 @@ import { useState } from "react";
 
 export default function Home() {
   const [counter, setCounter] = useState(0);
-  const [checkingAmount, setCheckingAmount] = useState(3850);
-  const [savingAmount, setSavingAmount] = useState(9820);
+  const [checkingAmount, setCheckingAmount] = useState(0);
+  const [savingAmount, setSavingAmount] = useState(400);
 
   const sentToChecking = () => {
     setSavingAmount(savingAmount - 100);
@@ -46,8 +46,14 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <br />
       <div
-        style={{ fontSize: "30px", color: "#0f0", border: "1px solid black" }}
+        style={{
+          width: "50%",
+          fontSize: "30px",
+          color: "#0f0",
+          border: "1px solid black",
+        }}
       >
         felipe
       </div>

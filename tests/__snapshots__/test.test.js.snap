@@ -1,18 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Constants SUPERHEROES should match snapshot 1`] = `
-Array [
-  "Batman",
-  "superman",
-  "deadpool",
-  "wolverine",
-]
-`;
-
-exports[`Constants print style checking component css style  1`] = `"font-size:10px;"`;
-
-exports[`snapshots Index should match snapshot 1`] = `
-<Fragment>
+exports[`Test calculation saving balance 200$ 1`] = `
+<Home>
   <div>
     <h2>
       My Savings
@@ -28,36 +17,83 @@ exports[`snapshots Index should match snapshot 1`] = `
   <div
     id="counter"
   >
-    3
+    0
   </div>
   <div>
     <div>
       <div>
         <div>
           <CheckingAccount
-            checkingAmount={3850}
+            checkingAmount={100}
             sentToSaving={[Function]}
-          />
+          >
+            <div>
+              <h1>
+                Checking:
+              </h1>
+              <h3
+                id="checking-id"
+              >
+                100
+              </h3>
+              <button
+                id="send-button"
+                onClick={[Function]}
+              >
+                Send 100 to Saving
+              </button>
+            </div>
+          </CheckingAccount>
         </div>
         <div>
           <SavingAccount
-            savingAmount={9820}
+            savingAmount={300}
             sentToChecking={[Function]}
-          />
+          >
+            <div>
+              <h1>
+                Saving:
+              </h1>
+              <h3
+                id="saving-val"
+              >
+                300$
+              </h3>
+              <button
+                id="send-to-checking"
+                onClick={[Function]}
+              >
+                Send 100 to Checking
+              </button>
+              <button
+                id="setnum"
+                onClick={[Function]}
+              >
+                set num
+              </button>
+              <div
+                id="num-val"
+              >
+                0
+              </div>
+            </div>
+          </SavingAccount>
         </div>
       </div>
     </div>
   </div>
+  <br />
   <div
     style={
       Object {
         "border": "1px solid black",
         "color": "#0f0",
         "fontSize": "30px",
+        "width": "50%",
       }
     }
   >
     felipe
   </div>
-</Fragment>
+</Home>
 `;
