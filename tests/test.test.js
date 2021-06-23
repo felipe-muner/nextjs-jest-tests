@@ -65,9 +65,21 @@ describe("Simulating clicks 2", () => {
 describe("snapshots Index", () => {
   const tree = shallow(<Index />);
   it("should match snapshot", () => expect(tree).toMatchSnapshot());
+  // expect(tree.prop('style')).toMatchSnapshot();
+  // expect(tree.prop('style')).toMatchSnapshot();
 });
 
-
 describe("Constants", () => {
-  it("SUPERHEROES should match snapshot", () => expect(SUPERHEROES).toMatchSnapshot());
+  it("SUPERHEROES should match snapshot", () =>
+    expect(SUPERHEROES).toMatchSnapshot());
+});
+
+describe("Constants print style", () => {
+  const wrapper = shallow(
+    <div
+      style="font-size:10px;"      
+    />
+  );
+  it("SUPERHEROES should match snapshot", () =>
+    expect(wrapper.prop("style")).toMatchSnapshot());
 });

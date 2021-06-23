@@ -9,6 +9,8 @@ Array [
 ]
 `;
 
+exports[`Constants print style SUPERHEROES should match snapshot 1`] = `"font-size:10px;"`;
+
 exports[`snapshots Index should match snapshot 1`] = `
 <Fragment>
   <div>
