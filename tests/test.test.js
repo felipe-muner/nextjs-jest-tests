@@ -10,7 +10,7 @@ import { SUPERHEROES } from "../constants/superheros";
 
 const user = {
   checkingAmount: 0,
-  savingAmount: 300,
+  savingAmount: 400,
 };
 
 // test("H2 Amount", () => {
@@ -87,31 +87,22 @@ const user = {
 // });
 
 describe("Test calculation", () => {
-  // it("saving balance 400$", () => {
-  //   const saving = mount(<SavingAccount savingAmount={user2.savingAmount} />);
-  //   const total = saving.find("#saving-val").text();
-  //   const expected = user2.savingAmount + "$";
-  //   expect(expected).toEqual(total);
-  // });
-
-  it("saving balance 200$", () => {
-    const wrapper = mount(<Index />);
-
-    wrapper.find("#send-to-checking").simulate("click");
-    const savingAmount = wrapper.find("#saving-val").text();
+  const wrapper = mount(<Index />);
+  it("saving balance 400$", () => {
+    const total = wrapper.find("#saving-val").text();
     const expected = user.savingAmount + "$";
-    expect(savingAmount).toEqual(expected);
-
-    // saving.find("#setnum").simulate("click");
-    // saving.find("#setnum").simulate("click");
-    // const numval = saving.find("#num-val").text();
-
-    // console.log("numval", numval);
-    expect(wrapper).toMatchSnapshot();
+    expect(total).toEqual(expected);
   });
 
-  // it("SNAPSHOT SAVING", () => {
-  //   const wrapper = mount(<Index />);
+  it("saving balance 300$", () => {
+    wrapper.find("#send-to-checking").simulate("click");
+    const savingAmount = wrapper.find("#saving-val").text();
+    const expected = user.savingAmount - 100 + "$";
+    expect(savingAmount).toEqual(expected);
+  });
 
-  // });
+  it("checking balance 100$", () => {
+    const savingAmount = wrapper.find("#checking-id").text();
+    expect(savingAmount).toEqual("100");
+  });
 });
