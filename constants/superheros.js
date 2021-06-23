@@ -1,1 +1,1 @@
-export const SUPERHEROES = ["Bat2man", "superman", "deadpool", "wolverine"];
+export const SUPERHEROES = ["Batman", "superman", "deadpool", "wolverine"];

@@ -62,7 +62,7 @@ describe("Simulating clicks 2", () => {
   expect(counter).toEqual("1");
 });
 
-describe("snapshots", () => {
+describe("snapshots Index", () => {
   const tree = shallow(<Index />);
   it("should match snapshot", () => expect(tree).toMatchSnapshot());
 });

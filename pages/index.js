@@ -46,6 +46,11 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <div
+        style={{ fontSize: "30px", color: "#0f0", border: "1px solid black" }}
+      >
+        felipe
+      </div>
     </>
   );
 }

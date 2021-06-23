@@ -9,7 +9,7 @@ Array [
 ]
 `;
 
-exports[`snapshots should match snapshot 1`] = `
+exports[`snapshots Index should match snapshot 1`] = `
 <Fragment>
   <div>
     <h2>
@@ -45,6 +45,17 @@ exports[`snapshots should match snapshot 1`] = `
         </div>
       </div>
     </div>
+  </div>
+  <div
+    style={
+      Object {
+        "border": "1px solid black",
+        "color": "#0f0",
+        "fontSize": "30px",
+      }
+    }
+  >
+    felipe
   </div>
 </Fragment>
 `;
