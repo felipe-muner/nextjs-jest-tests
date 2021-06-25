@@ -13,6 +13,32 @@ const user = {
   savingAmount: 400,
 };
 
+describe("Test calculation", () => {
+  const wrapper = mount(<Index />);
+  it("checking btn function name", () => {
+    const got = wrapper.find("#send-to-checking").props().onClick.name
+    const expected = "sentToChecking"
+    expect(got).toEqual(expected);
+  })
+  it("saving balance 400$", () => {
+    const total = wrapper.find("#saving-val").text();
+    const expected = user.savingAmount + "$";
+    expect(total).toEqual(expected);
+  });
+
+  it("saving balance 300$", () => {
+    wrapper.find("#send-to-checking").simulate("click");
+    const savingAmount = wrapper.find("#saving-val").text();
+    const expected = user.savingAmount - 100 + "$";
+    expect(savingAmount).toEqual(expected);
+  });
+
+  it("checking balance 100$", () => {
+    const savingAmount = wrapper.find("#checking-id").text();
+    expect(savingAmount).toEqual("100");
+  });
+});
+
 // test("H2 Amount", () => {
 //   const wrapper = shallow(<Index />);
 //   const h2s = wrapper.find("h2");
@@ -85,24 +111,3 @@ const user = {
 //   it("checking component css style ", () =>
 //     expect(wrapper.prop("style")).toMatchSnapshot());
 // });
-
-describe("Test calculation", () => {
-  const wrapper = mount(<Index />);
-  it("saving balance 400$", () => {
-    const total = wrapper.find("#saving-val").text();
-    const expected = user.savingAmount + "$";
-    expect(total).toEqual(expected);
-  });
-
-  it("saving balance 300$", () => {
-    wrapper.find("#send-to-checking").simulate("click");
-    const savingAmount = wrapper.find("#saving-val").text();
-    const expected = user.savingAmount - 100 + "$";
-    expect(savingAmount).toEqual(expected);
-  });
-
-  it("checking balance 100$", () => {
-    const savingAmount = wrapper.find("#checking-id").text();
-    expect(savingAmount).toEqual("100");
-  });
-});
