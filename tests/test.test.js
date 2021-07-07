@@ -13,13 +13,19 @@ const user = {
   savingAmount: 400,
 };
 
+describe("snapshot index", () => {
+  //snapshot component
+})
+
 describe("Test calculation", () => {
+    
   const wrapper = mount(<Index />);
   it("checking btn function name", () => {
     const got = wrapper.find("#send-to-checking").props().onClick.name
     const expected = "sentToChecking"
     expect(got).toEqual(expected);
   })
+
   it("saving balance 400$", () => {
     const total = wrapper.find("#saving-val").text();
     const expected = user.savingAmount + "$";
